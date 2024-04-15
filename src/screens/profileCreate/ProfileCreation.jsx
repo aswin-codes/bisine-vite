@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setFullName, setPhoneNumber } from "../../redux/features/user";
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../../axios";
 import axios from "axios";
 
 const ProfileCreation = () => {

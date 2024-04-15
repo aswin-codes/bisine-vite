@@ -4,7 +4,6 @@ import Google from "./google.png";
 import { useDispatch, useSelector } from "react-redux";
 import { setEmail, setProfileUrl } from "../../redux/features/user";
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../../axios";
 import { GoogleLogin, useGoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import { googleLogout } from "@react-oauth/google";

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Button, Tooltip } from "@nextui-org/react";
 import StarRatings from "react-star-ratings";
 import { useDispatch, useSelector } from "react-redux";
-import axiosInstance from "../../../axios";
+import axiosInstance from "../../../Helper/axiosInstance";
 import { setProductList, setTotalPrice } from "../../../redux/features/checkout";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";

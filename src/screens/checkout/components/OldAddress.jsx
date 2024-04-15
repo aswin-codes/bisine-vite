@@ -3,7 +3,7 @@ import { RadioGroup, Radio, Button } from "@nextui-org/react";
 import { useDispatch } from "react-redux";
 import { setAllAddresses, setDeliveryAddress } from "../../../redux/features/checkout";
 import { useSelector } from "react-redux";
-import axiosInstance from "../../../axios";
+import axiosInstance from "../../../Helper/axiosInstance";
 
 const OldAddress = ({ setNewTrue, setIndex }) => {
   const [selectedAddress, setSelectedAddress] = useState(null);

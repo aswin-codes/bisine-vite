@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Button, Tooltip } from "@nextui-org/react";
-import axiosInstance from "../../../axios";
+import axiosInstance from "../../../Helper/axiosInstance";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 

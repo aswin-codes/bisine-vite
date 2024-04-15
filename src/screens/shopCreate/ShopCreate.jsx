@@ -20,8 +20,7 @@ import {
   setShopNameError,
   setShopTagsError,
   setStateError,
-} from "../../redux/features/shopError";
-import axiosInstance from "../../axios";
+} from "../../redux/features/shopError";;
 import { useNavigate } from "react-router-dom";
 
 const ShopCreate = () => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Navbar from "../../CommonComponets/NavBar";
 import ProductList from "./components/ProductList";
-import axiosInstance from "../../axios";
+import axiosInstance from "../../Helper/axiosInstance";
 import ReviewSection from "./components/ReviewSection";
 import OrderList from "./components/OrderList";
 import { Button } from "@nextui-org/react";

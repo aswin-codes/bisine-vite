@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Input, Button, Select, SelectItem } from "@nextui-org/react";
-import axiosInstance from "../../../axios";
+import axiosInstance from "../../../Helper/axiosInstance";
 import { data } from "autoprefixer";
 import toast from "react-hot-toast";
 

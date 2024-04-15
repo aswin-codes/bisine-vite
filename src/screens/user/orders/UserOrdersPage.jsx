@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import NavBar from "../../../CommonComponets/NavBar";
 import UserOrderCard from "./components/UserOrderCard";
-import axiosInstance from "../../../axios";
+import axiosInstance from "../../../Helper/axiosInstance";
 import { useDispatch, useSelector } from "react-redux";
 import { setOrderedProducts } from "../../../redux/features/orderedItems";
 
