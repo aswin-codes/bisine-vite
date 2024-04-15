@@ -140,7 +140,7 @@ const ProductAdditionScreen = () => {
       if (response.status == 201) {
         //Product is sucessfully added, need to naviaate to Inventory
         toast.success("Product successfully added")
-        navigate("/");
+        navigate("/admin");
       }
     } catch (error) {
       alert("Sorry, something went wrong, please try later...")

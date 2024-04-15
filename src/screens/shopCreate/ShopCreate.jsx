@@ -22,7 +22,7 @@ import {
   setStateError,
 } from "../../redux/features/shopError";;
 import { useNavigate } from "react-router-dom";
-import { setArea, setCity, setContactNumber, setEmailID, setFlat, setLandmark, setPinCode, setShopDescription, setShopName, setShopState, setShopTags } from "../../redux/features/shop";
+import { setArea, setCity, setContactNumber, setEmailID, setFlat, setLandmark, setPinCode, setShopDescription, setShopName,  setShopTags, setShopId } from "../../redux/features/shop";
 
 const ShopCreate = () => {
   const shopName = useSelector((e) => e.shop.shopName);
@@ -171,7 +171,7 @@ const ShopCreate = () => {
           localStorage.setItem("shop",JSON.stringify({shopId: shop_id}));
           //Redirect to shop dashboard
           //for now regirecting to home page
-          navigate('/');
+          navigate('/admin');
           // Optionally handle success response
         } else {
           console.error("Failed to create shop");
@@ -187,6 +187,7 @@ const ShopCreate = () => {
   useEffect(()=>{
     console.log("Dispatching data")
     dispatch(setShopName(""))
+    dispatch(setShopId(""))
     dispatch(setShopDescription(""))
     dispatch(setShopTags([]))
     dispatch(setPinCode(""))
