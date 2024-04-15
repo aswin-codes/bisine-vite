@@ -77,7 +77,7 @@ const ShopCreate = () => {
         try {
           
           const response = await axios.post(
-            `${import.meta.env.VITE_API_URL}/shop/checkUniqueId`,
+            `https://bisinenode.vercel.app/api/shop/checkUniqueId`,
             {
               unique_id: shopId,
             }
@@ -156,7 +156,7 @@ const ShopCreate = () => {
       try {
         const accessToken = localStorage.getItem("access_token");
         const response = await axios.post(
-          `${import.meta.env.VITE_API_URL}/shop/create`,
+          `https://bisinenode.vercel.app/api/shop/create`,
           shopData,
           {
             headers: {
