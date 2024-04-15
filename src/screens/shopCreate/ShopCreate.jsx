@@ -62,6 +62,7 @@ const ShopCreate = () => {
     return emailRegex.test(email);
   }
 
+
   const nextPart = async () => {
     if (part == 1) {
       if (shopName == "") {
@@ -183,19 +184,8 @@ const ShopCreate = () => {
     }
   };
 
-
-
-  useEffect(() => {
-    dispatch(setShopNameError(""));
-    dispatch(setShopDescriptionError(""));
-    dispatch(setShopTagsError(""));
-    dispatch(setPinCodeError(""));
-    dispatch(setFlatError(""));
-    dispatch(setAreaError(""));
-    dispatch(setCityError(""));
-    dispatch(setStateError(""));
-    dispatch(setContactNumberError(""));
-    dispatch(setEmailIDError(""));
+  useEffect(()=>{
+    console.log("Dispatching data")
     dispatch(setShopState({
       shopName: '',
       shopDescription: '',
@@ -213,7 +203,21 @@ const ShopCreate = () => {
       logo:'',
       banner: '',
       products:[]
-  }))
+  })) 
+  },[])
+
+  useEffect(() => {
+    dispatch(setShopNameError(""));
+    dispatch(setShopDescriptionError(""));
+    dispatch(setShopTagsError(""));
+    dispatch(setPinCodeError(""));
+    dispatch(setFlatError(""));
+    dispatch(setAreaError(""));
+    dispatch(setCityError(""));
+    dispatch(setStateError(""));
+    dispatch(setContactNumberError(""));
+    dispatch(setEmailIDError(""));
+    
   }, [
     shopName,
     shopDescription,
