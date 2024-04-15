@@ -166,7 +166,7 @@ const ShopCreate = () => {
         if (response.status === 201) {
           console.log("Shop created successfully");
           const {shop_id} = response.data;
-          localStorage.setItem("shop_id",shop_id);
+          localStorage.setItem("shop",JSON.stringify({shopId: shop_id}));
           //Redirect to shop dashboard
           //for now regirecting to home page
           navigate('/');
