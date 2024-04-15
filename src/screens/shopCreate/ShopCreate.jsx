@@ -22,7 +22,7 @@ import {
   setStateError,
 } from "../../redux/features/shopError";;
 import { useNavigate } from "react-router-dom";
-import { setShopState } from "../../redux/features/shop";
+import { setArea, setCity, setContactNumber, setEmailID, setFlat, setLandmark, setPinCode, setShopDescription, setShopName, setShopState, setShopTags } from "../../redux/features/shop";
 
 const ShopCreate = () => {
   const shopName = useSelector((e) => e.shop.shopName);
@@ -186,24 +186,17 @@ const ShopCreate = () => {
 
   useEffect(()=>{
     console.log("Dispatching data")
-    dispatch(setShopState({
-      shopName: '',
-      shopDescription: '',
-      shopId:'',
-      shopTags:[],
-      pincode:'',
-      flat:'',
-      area:'',
-      landmark:'',
-      city:'',
-      state:'',
-      contactNumber:'',
-      emailID:'',
-      socialMediaLink:'',
-      logo:'',
-      banner: '',
-      products:[]
-  })) 
+    dispatch(setShopName(""))
+    dispatch(setShopDescription(""))
+    dispatch(setShopTags([]))
+    dispatch(setPinCode(""))
+    dispatch(setFlat(""))
+    dispatch(setArea(""))
+    dispatch(setCity(""))
+    dispatch(setLandmark(""))
+    dispatch(setContactNumber(""))
+    dispatch(setEmailID(""))
+
   },[])
 
   useEffect(() => {
