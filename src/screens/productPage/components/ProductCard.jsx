@@ -29,7 +29,7 @@ function ProductCard({ product }) {
     } else {
       dispatch(
         setProductIdVarList([
-          { productId: product.product_id, variantName: selectedVariant },
+          { productId: product.product_id, variantName: selectedVariant.name },
         ])
       );
       navigate("/checkout");
