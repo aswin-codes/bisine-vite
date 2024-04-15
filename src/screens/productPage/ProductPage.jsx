@@ -40,7 +40,7 @@ function ProductPage() {
     return (
         <>
             <Navbar />  
-            {product ? <ProductCard product={product}/> :  <div className='h-96 w-full'><CircularProgress/></div>}
+            { product ? <ProductCard product={product}/> : <div className='h-96 w-full flex items-center justify-center '> <CircularProgress aria-label="Loading..." /></div>}
             <div className="max-w-6xl px-4 mx-auto py-6">
                 <h2 className="font-bold text-2xl md:text-3xl mb-6">Customer Reviews</h2>
                 {product && product.reviews.map((review,index) => (
@@ -54,7 +54,7 @@ function ProductPage() {
                         rating={review.rating}
                     />
                 ))}
-                <AddReviewCard product_id={productId}  />
+                {product && <AddReviewCard product_id={productId}  />   }
             </div>
         </>
     )
