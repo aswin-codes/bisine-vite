@@ -9,6 +9,7 @@ import cloth2 from "../productPage/assests/URBANMONKEY06_11_231679.webp"
 import cloth3 from "../productPage/assests/URBANMONKEY07_11_231899.webp"
 import { useParams } from 'react-router-dom';
 import axiosInstance from '../../Helper/axiosInstance';
+import { CircularProgress, Skeleton } from '@nextui-org/react';
 
 function ProductPage() {
     const dispatch = useDispatch();
@@ -39,7 +40,7 @@ function ProductPage() {
     return (
         <>
             <Navbar />  
-            {product && <ProductCard product={product}/>}
+            {product ? <ProductCard product={product}/> :  <div className='h-96 w-full'><CircularProgress/></div>}
             <div className="max-w-6xl px-4 mx-auto py-6">
                 <h2 className="font-bold text-2xl md:text-3xl mb-6">Customer Reviews</h2>
                 {product && product.reviews.map((review,index) => (

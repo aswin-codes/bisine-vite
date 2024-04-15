@@ -37,7 +37,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route path="/user/cart" element={<CartPage/>}/>
               <Route path="/admin" element={<AdminPage/>}/>
               <Route path="/admin/product/edit" element={<ProductEditScreen/>}/>
-{/* <Route path="/" element={<h1>hi</h1>}/> */}
               <Route path="/:shop_id" element={<ShopScreen />} />
               <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/product/:product_id" element={<ProductPage />} />
