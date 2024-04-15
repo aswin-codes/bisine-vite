@@ -22,7 +22,7 @@ import AdminPage from "./screens/admin/AdminPage.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <NextUIProvider>
-    <GoogleOAuthProvider clientId="774961232823-b6fmrl6p9tcbhgk19fuv7a6ftbbegcm6.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="293664570886-350a4i1e7tp70pvc1t9je1tttgmt4o0e.apps.googleusercontent.com">
       <React.StrictMode>
         <Provider store={store}>
           <Toaster position="top-right" />

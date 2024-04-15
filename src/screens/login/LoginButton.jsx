@@ -10,8 +10,7 @@ import { jwtDecode } from "jwt-decode";
 import { googleLogout } from "@react-oauth/google";
 import axios from "axios";
 
-const clientId =
-  "774961232823-b6fmrl6p9tcbhgk19fuv7a6ftbbegcm6.apps.googleusercontent.com";
+
 
 const LoginButton = () => {
   const navigate = useNavigate();
