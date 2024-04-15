@@ -45,7 +45,7 @@ const ProfileCreation = () => {
     else if (isChecked){
       setIsError(null)
       setIsLoading(true);
-      axios.post(`${import.meta.env.VITE_API_URL}/user/register`, {
+      axios.post(`https://bisinenode.vercel.app/api/user/register`, {
         email : localStorage.getItem('email'),
         fullName: fullName,
         profileURL: localStorage.getItem('profileUrl'),
