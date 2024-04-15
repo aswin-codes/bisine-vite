@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
+
 export const shop = createSlice({
     //Address should be given as pincode,flat,area,landmark as csv to the backend
     name: 'shop',
@@ -22,6 +24,9 @@ export const shop = createSlice({
         products:[]
     },
     reducers: {
+        setShopState : (state,action) => {
+            state = action.payload
+        },
         setShopName : (state, action) => {
             state.shopName = action.payload
         },
@@ -74,6 +79,6 @@ export const shop = createSlice({
     }
 })
 
-export const {setShopName, setShopDescription,setShopTags,setPinCode,setFlat, setArea,setLandmark,setCity,setState, setContactNumber, setEmailID, setSocialMediaLink, setBanner, setLogo,setShopId, setProducts, } = shop.actions
+export const {setShopName, setShopState,setShopDescription,setShopTags,setPinCode,setFlat, setArea,setLandmark,setCity,setState, setContactNumber, setEmailID, setSocialMediaLink, setBanner, setLogo,setShopId, setProducts, } = shop.actions
 
 export default shop.reducer

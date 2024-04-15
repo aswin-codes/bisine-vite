@@ -22,6 +22,7 @@ import {
   setStateError,
 } from "../../redux/features/shopError";;
 import { useNavigate } from "react-router-dom";
+import { setShopState } from "../../redux/features/shop";
 
 const ShopCreate = () => {
   const shopName = useSelector((e) => e.shop.shopName);
@@ -182,6 +183,8 @@ const ShopCreate = () => {
     }
   };
 
+
+
   useEffect(() => {
     dispatch(setShopNameError(""));
     dispatch(setShopDescriptionError(""));
@@ -193,6 +196,24 @@ const ShopCreate = () => {
     dispatch(setStateError(""));
     dispatch(setContactNumberError(""));
     dispatch(setEmailIDError(""));
+    dispatch(setShopState({
+      shopName: '',
+      shopDescription: '',
+      shopId:'',
+      shopTags:[],
+      pincode:'',
+      flat:'',
+      area:'',
+      landmark:'',
+      city:'',
+      state:'',
+      contactNumber:'',
+      emailID:'',
+      socialMediaLink:'',
+      logo:'',
+      banner: '',
+      products:[]
+  }))
   }, [
     shopName,
     shopDescription,
