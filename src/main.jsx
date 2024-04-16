@@ -19,6 +19,7 @@ import CheckoutPage from "./screens/checkout/CheckoutPage.jsx";
 import { NextUIProvider } from "@nextui-org/react";
 import ProductEditScreen from "./screens/editProduct/EditProduct.jsx";
 import AdminPage from "./screens/admin/AdminPage.jsx";
+import TermsAndConditions from "./screens/termsAndCondition/TemsAndCondition.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <NextUIProvider>
@@ -40,7 +41,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route path="/:shop_id" element={<ShopScreen />} />
               <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/product/:product_id" element={<ProductPage />} />
-            </Routes>
+              <Route path="/terms-and-condition" element={<TermsAndConditions/>}/>
+             </Routes>
           </BrowserRouter>
         </Provider>
       </React.StrictMode>
