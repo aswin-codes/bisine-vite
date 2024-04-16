@@ -110,7 +110,7 @@ const ProfileCreation = () => {
           />
           <label className="text-xs">
             By creating an account, you are agreeing to our{" "}
-            <span className="underline text-blue-700">
+            <span onClick={() => navigate("/terms-and-condition")} className="underline text-blue-700">
               Terms and conditions
             </span>
           </label>
