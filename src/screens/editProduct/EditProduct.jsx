@@ -14,7 +14,8 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import toast from "react-hot-toast";
+import toast from "react-hot-toast"
+import axiosInstance from "../../Helper/axiosInstance";
 
 const ProductEditScreen = () => {
     const product_id = useSelector(e => e.admin.editProductId);
@@ -135,7 +136,7 @@ const ProductEditScreen = () => {
     }
 
     try{
-      const response = await axios.put(`${import.meta.env.VITE_API_URL}/admin/product/edit/${product_id}`,request_data);
+      const response = await axiosInstance.put(`${import.meta.env.VITE_API_URL}/admin/product/edit/${product_id}`,request_data);
       if (response.status == 200) {
         //Product is sucessfully added, need to naviaate to Inventory
         toast.success("Product edited successfully")
