@@ -31,6 +31,11 @@ const ProductEditScreen = () => {
   const weightUnit = useSelector((e) => e.product.unit);
   const quantityInStock = useSelector((e) => e.product.quantity);
 
+  useEffect(()=>{
+    
+  
+  },[])
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -249,7 +254,7 @@ const ProductEditScreen = () => {
                     </p>
                   </div>
                 )}
-                <TagInput setData={setProductTags} bgWhite={true} />
+                <TagInput data={productTags} setData={setProductTags} bgWhite={true} />
               </div>
               <h1 className="text-black mt-3 font-medium">Product Images:</h1>
               <div className="bg-gray-300 rounded h-28 flex p-2">

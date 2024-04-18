@@ -59,7 +59,7 @@ const BasicDetails = ({ partNo }) => {
       </div>
       <div>
       <label className="text-md font-semibold block">Shop Tags</label>
-        <TagInput setData={setShopTags}/>
+        <TagInput data={[]} setData={setShopTags}/>
       </div>
     </div>
   );

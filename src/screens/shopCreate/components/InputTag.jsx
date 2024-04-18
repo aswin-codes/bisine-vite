@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 
-function TagInput({ bgWhite , setData}) {
-  const [tags, setTags] = useState([]);
+function TagInput({ bgWhite , setData, data}) {
+  const [tags, setTags] = useState(data);
   const [inputValue, setInputValue] = useState("");
   const dispatch = useDispatch();
   const shopTagsError = useSelector((e) => e.shopError.shopTagsError);
@@ -47,7 +47,7 @@ function TagInput({ bgWhite , setData}) {
         } py-1 ${shopTagsError != "" ? "border-red-500" : "border-gray-500"}`}
       >
         <div className=" flex flex-wrap  gap-1 ">
-          {tags.map((tag, index) => (
+          {tags && tags.map((tag, index) => (
             <div
               key={index}
               className="bg-blue-500 text-white px-2 py-1 text-md h-fit rounded-full flex  items-center"
