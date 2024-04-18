@@ -24,7 +24,7 @@ import TermsAndConditions from "./screens/termsAndCondition/TemsAndCondition.jsx
 ReactDOM.createRoot(document.getElementById("root")).render(
   <NextUIProvider>
     <GoogleOAuthProvider clientId="293664570886-350a4i1e7tp70pvc1t9je1tttgmt4o0e.apps.googleusercontent.com">
-      <React.StrictMode>
+      <>
         <Provider store={store}>
           <Toaster position="top-right" />
           <BrowserRouter>
@@ -45,7 +45,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
              </Routes>
           </BrowserRouter>
         </Provider>
-      </React.StrictMode>
+      </>
     </GoogleOAuthProvider>
   </NextUIProvider>
 );

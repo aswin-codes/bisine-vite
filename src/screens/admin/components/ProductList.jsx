@@ -78,7 +78,7 @@ const ProductList = () => {
                 </div>
                 <div className="flex items-center mt-4 md:mt-0">
                   <Button onClick={() => handleEditInfo(e)} className="w-full">
-                    View
+                    
                   </Button>
                 </div>
               </div>
