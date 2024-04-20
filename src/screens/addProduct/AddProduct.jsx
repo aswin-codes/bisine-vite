@@ -249,7 +249,7 @@ const ProductAdditionScreen = () => {
                     </p>
                   </div>
                 )}
-                <TagInput setData={setProductTags} bgWhite={true} />
+                <TagInput data={[]} setData={setProductTags} bgWhite={true} />
               </div>
               <h1 className="text-black mt-3 font-medium">Product Images:</h1>
               <div className="bg-gray-300 rounded h-28 flex p-2">
