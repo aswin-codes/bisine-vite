@@ -1,11 +1,14 @@
-import React from "react";
+import React,{useState} from "react";
 import axiosInstance from "../../../../Helper/axiosInstance";
 import toast from "react-hot-toast";
 
 const UserOrderCard = ({ orderData }) => {
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleCancelOrder = async () => {
+    setIsLoading(true)
     const response = await axiosInstance.delete(`/order/cancel-order-item/${orderData.order_item_id}`)
+    setIsLoading(false)
     if (response.status == 200) {
       toast.success(response.data.message)
       location.reload()
@@ -49,7 +52,7 @@ const UserOrderCard = ({ orderData }) => {
             Call Seller
           </button>
           </a>
-          <button onClick={() => handleCancelOrder()} className="bg-red-500 py-2 px-5 w-full text-white font-semibold text-lg rounded ">
+          <button hidden={orderData.status == "Delivered"} disabled={isLoading}  onClick={() => handleCancelOrder()} className="bg-red-500 py-2 px-5 w-full text-white font-semibold text-lg rounded ">
             Cancel
           </button>
         </div>

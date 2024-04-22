@@ -45,6 +45,7 @@ const LoginButton = () => {
         if (error.response && error.response.status === 404) {
           // Handle 404 error (user not found)
           console.log(error.response);
+          localStorage.setItem("shop",JSON.stringify({shopId:null}))
           navigate("/user/register"); // Navigate to signup page or another page
         } else {
           // Handle other errors

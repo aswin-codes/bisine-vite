@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { setProductIdVarList } from "../../../redux/features/checkout";
 
 function ProductCard({ product }) {
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -25,20 +26,27 @@ function ProductCard({ product }) {
   };
 
   const handleBuyNow = () => {
-    if (handleQuantity()) {
+    if (localStorage.getItem("user")) {
+      if (handleQuantity()) {
+      } else {
+        dispatch(
+          setProductIdVarList([
+            {
+              productId: product.product_id,
+              variantName: selectedVariant.name,
+            },
+          ])
+        );
+        navigate("/checkout");
+      }
     } else {
-      dispatch(
-        setProductIdVarList([
-          { productId: product.product_id, variantName: selectedVariant.name },
-        ])
-      );
-      navigate("/checkout");
+      toast.error("Kindly login to buy products")
+      navigate("/user/login")
     }
   };
 
   const handleAddToCart = async () => {
     if (handleQuantity()) {
-      
     } else {
       if (localStorage.getItem("user")) {
         const request_data = {
@@ -64,6 +72,7 @@ function ProductCard({ product }) {
           });
       } else {
         toast.error("Kindly login to add cart");
+        navigate("/user/login")
       }
     }
   };
@@ -154,7 +163,10 @@ function ProductCard({ product }) {
           <p className="text-xl font-semibold text-green-500 mb-6">
             ${parseInt(selectedVariant.price)}
           </p>
-          <div onClick={() => navigate(`/${product.shop_id}`)} className="flex items-center gap-2 mb-2 cursor-pointer">
+          <div
+            onClick={() => navigate(`/${product.shop_id}`)}
+            className="flex items-center gap-2 mb-2 cursor-pointer"
+          >
             <img
               src={ShopImageSource}
               alt="Shop Logo"

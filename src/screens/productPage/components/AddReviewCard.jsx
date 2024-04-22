@@ -7,6 +7,7 @@ import axiosInstance from "../../../Helper/axiosInstance";
 function AddReviewCard({  product_id }) {
   const [rating, setRating] = useState(0);
   const [review, setReview] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const changeRating = (newRating) => {
     setRating(newRating);
@@ -22,7 +23,9 @@ function AddReviewCard({  product_id }) {
         description: review,
         date: getCurrentDateFormatted(),
       };
+      setIsLoading(true)
       const response = await axiosInstance.post("/review/add", newReview);
+      setIsLoading(false)
       if (response.status == 201) {
         toast.success(response.data.msg)
       }
@@ -90,6 +93,7 @@ function AddReviewCard({  product_id }) {
             />
           </div>
           <button
+            disabled={isLoading}
             className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-blue-500 text-white"
             onClick={createReviewCard}
           >

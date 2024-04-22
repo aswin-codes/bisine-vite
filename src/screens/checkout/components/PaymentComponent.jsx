@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Button, Tooltip } from "@nextui-org/react";
 import axiosInstance from "../../../Helper/axiosInstance";
@@ -23,6 +23,8 @@ const CashIcon = () => (
 );
 
 const PaymentComponent = ({ setIndex }) => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const product_list = useSelector((e) => e.checkout.productList);
   const totalPrice = useSelector((e) => e.checkout.totalPrice);
   const deliveryAddress = useSelector((e) => e.checkout.deliveryAddress);
@@ -36,9 +38,9 @@ const PaymentComponent = ({ setIndex }) => {
       delivery_method: "cod",
       product_list,
     };
-
+    setIsLoading(true)
     const response = await axiosInstance.post("/order/placeorder",request_data);
-
+    setIsLoading(false);
     if (response.status == 201) {
         toast.success(response.data.msg);
         navigate("/user/orders");
@@ -98,7 +100,7 @@ const PaymentComponent = ({ setIndex }) => {
         </div>
         <div className="p-2">
             <p className="text-md">{contentPrice}</p>
-            <Button onClick={() => handlePlaceOrder()} color="primary" className="mt-5 w-full text-lg font-semibold">
+            <Button isLoading={isLoading} onClick={() => handlePlaceOrder()} color="primary" className="mt-5 w-full text-lg font-semibold">
                 Place Order
             </Button>
         </div>
