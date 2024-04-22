@@ -1,4 +1,4 @@
-import { Select, SelectItem } from "@nextui-org/react";
+import { Input, Select, SelectItem } from "@nextui-org/react";
 import React, { useState } from "react";
 import axiosInstance from "../../../Helper/axiosInstance";
 import toast from "react-hot-toast";
@@ -44,6 +44,10 @@ const ProductTile = ({ order, index }) => {
           Delivery Address: {order.flat}, {order.area}, {order.city},{" "}
           {order.state} - {order.pincode}
         </p>
+        <div className="flex flex-col md:flex-row md:items-center gap-2 mb-4">
+          <Input type="number" placeholder="50.00"  size="sm"  label="₹"/>
+          <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-200">Update Delivery Charge</button>
+        </div>
         <div className="flex flex-col md:flex-row md:items-center">
           {/* Dropdown to select status */}
           <Select
