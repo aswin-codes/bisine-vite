@@ -145,6 +145,7 @@ const NavBar = ({ isSearchVisible }) => {
                     JSON.parse(localStorage.getItem("shop")).shopId ? <DropdownItem onClick={() => navigate("/admin")}>View Shop</DropdownItem> :<DropdownItem onClick={() => navigate("/shop/create")}>Create Shop</DropdownItem>
                   }
                   <DropdownItem onClick={()=>navigate("/user/orders")}>My Orders</DropdownItem>
+                  <DropdownItem onClick={()=>navigate("/terms-and-condition")}>Terms and Conditions</DropdownItem>
                   <DropdownItem onClick={() => {
                   localStorage.clear()
                   navigateToLogin();
