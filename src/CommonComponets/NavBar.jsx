@@ -2,7 +2,12 @@ import { useState, useEffect } from "react";
 import Logo from "../Logo.png";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/react";
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+} from "@nextui-org/react";
 
 const NavBar = ({ isSearchVisible }) => {
   const [isSearchClicked, setIsSearchClicked] = useState(false);
@@ -141,14 +146,33 @@ const NavBar = ({ isSearchVisible }) => {
                     />
                   </DropdownTrigger>
                   <DropdownMenu className="font-semibold">
-                  {
-                    JSON.parse(localStorage.getItem("shop")).shopId ? <DropdownItem onClick={() => navigate("/admin")}>View Shop</DropdownItem> :<DropdownItem onClick={() => navigate("/shop/create")}>Create Shop</DropdownItem>
-                  }
-                  <DropdownItem onClick={()=>navigate("/user/orders")}>My Orders</DropdownItem>
-                  <DropdownItem onClick={() => {
-                  localStorage.clear()
-                  navigateToLogin();
-                  }} color="primary">Logout</DropdownItem>
+                    {JSON.parse(localStorage.getItem("shop")).shopId ? (
+                      <DropdownItem onClick={() => navigate("/admin")}>
+                        View Shop
+                      </DropdownItem>
+                    ) : (
+                      <DropdownItem onClick={() => navigate("/shop/create")}>
+                        Create Shop
+                      </DropdownItem>
+                    )}
+
+                    <DropdownItem onClick={() => navigate("/user/orders")}>
+                      My Orders
+                    </DropdownItem>
+                    <DropdownItem
+                      onClick={() => navigate("/terms-and-condition")}
+                    >
+                      Terms and Conditions
+                    </DropdownItem>
+                    <DropdownItem
+                      onClick={() => {
+                        localStorage.clear();
+                        navigateToLogin();
+                      }}
+                      color="primary"
+                    >
+                      Logout
+                    </DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
               </>
