@@ -57,6 +57,42 @@ function HomePage() {
           )}
         </div>
       </section>
+      <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+              <h3 class="text-2xl font-semibold mb-4">Bisine</h3>
+              <p>Contact us:</p>
+              <p>
+                Email:{" "}
+                <a href="mailto:contactbisine@gmail.com" class="underline">
+                  contactbisine@gmail.com
+                </a>
+              </p>
+              <p>
+                Phone:{" "}
+                <a href="tel:+919566875400" class="underline">
+                  +91 95668 75400
+                </a>
+              </p>
+              <p>
+                Address: Vembu Flats, 24th cross Sowmya Nagar, Medavakkam,
+                Chennai, 620018
+              </p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Useful Links</h3>
+              <ul>
+                <li>
+                  <a href="/terms-and-condition" class="hover:underline">
+                    Terms and Conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
