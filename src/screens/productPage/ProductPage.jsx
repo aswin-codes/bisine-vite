@@ -4,9 +4,6 @@ import AddReviewCard from './components/AddReviewCard'
 import ProductCard from './components/ProductCard'
 import { useSelector, useDispatch } from 'react-redux';
 import ReviewCard from './components/ReviewCard'
-import cloth1 from "../productPage/assests/URBANMONKEY06_11_231642.webp"
-import cloth2 from "../productPage/assests/URBANMONKEY06_11_231679.webp"
-import cloth3 from "../productPage/assests/URBANMONKEY07_11_231899.webp"
 import { useParams } from 'react-router-dom';
 import axiosInstance from '../../Helper/axiosInstance';
 import { CircularProgress, Skeleton } from '@nextui-org/react';

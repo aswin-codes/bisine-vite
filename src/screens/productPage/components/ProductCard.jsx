@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ProductPlaceholderImage from "../assests/placeholder-product.svg";
-import ShopPlaceholderImage from "../assests/placeholder-shop.svg";
 import StarRatings from "react-star-ratings";
 import toast from "react-hot-toast";
 import axiosInstance from "../../../Helper/axiosInstance";
@@ -91,7 +89,7 @@ function ProductCard({ product }) {
   const colors = ["blue", "green", "purple", "rose", "indigo", "pink"];
 
   const [mainImage, setMainImage] = useState(
-    product_images[0] ? product_images[0] : ProductPlaceholderImage
+    product_images[0] 
   );
   const [smallImages, setSmallImages] = useState([]);
 
@@ -122,7 +120,7 @@ function ProductCard({ product }) {
     setSelectedVariant(variant || defaultVariant);
   };
 
-  const ShopImageSource = shopImage || ShopPlaceholderImage;
+  const ShopImageSource = shopImage;
 
   return (
     <div className="grid md:grid-cols-2 gap-6 lg:gap-12 items-start max-w-6xl px-4 mx-auto py-6 pt-20">

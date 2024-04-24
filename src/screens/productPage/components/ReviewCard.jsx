@@ -1,10 +1,10 @@
+import { User2Icon } from 'lucide-react';
 import React from 'react'
-import userDefault from "../assests/userIcon.png"
 import StarRatings from 'react-star-ratings';
 
 function ReviewCard({userImage, name, date, description, rating, option}) {
     console.log(option);
-    const userPhoto = userImage || userDefault
+    const userPhoto = userImage || User2Icon
 
     return (
         <div

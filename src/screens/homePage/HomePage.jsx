@@ -3,6 +3,7 @@ import NavBar from "../../CommonComponets/NavBar";
 import Product from "../../CommonComponets/Product";
 import axiosInstance from "../../Helper/axiosInstance";
 import Loading from "../../CommonComponets/Loading";
+import SearchComponent from "../search/SearchComponent";
 
 function HomePage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -33,14 +34,14 @@ function HomePage() {
     <>
       <section className="min-h-screen bg-blue-50">
         <NavBar isSearchVisible={true} />
-        <div className="h-full px-8 py-20">
+        <div className="h-full px-2 sm:px-8 py-20">
           <h1 className="font-semibold text-black text-2xl">Recommendations</h1>
           <div className="py-2 text-black overflow-x-auto whitespace-nowrap">
             {/* {availableCategories.map(c => 
               <button onClick={() => setSelectedCategoryId(c.id)} className={`px-2 py-1 transition duration-300 ease-in-out my-1 mx-1  border rounded-lg ${selectedCategoryId == c.id ? 'bg-blue-500 border-blue-500 text-white':'bg-transparent border-black'}`}  id={c.id}>{c.category}</button>
             )} */}
           </div>
-          {isLoading ? (
+          {/* {isLoading ? (
             <Loading />
           ) : (
             <div className="mt-2 z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
@@ -54,7 +55,10 @@ function HomePage() {
                   />
                 ))}
             </div>
-          )}
+          )} */}
+          <div>
+            <SearchComponent/>
+          </div>
         </div>
       </section>
     </>
