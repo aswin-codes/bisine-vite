@@ -43,7 +43,7 @@ const Product = ({ product,  }) => {
       </div>
       <div className="text-right">
         <p className="text-lg font-semibold">
-          ${(price )}
+        ₹{(price )}
         </p>
         <button
           onClick={() =>{handleRemoveItem()}}

@@ -161,7 +161,7 @@ function ProductCard({ product }) {
             {productName ? productName : "Product Name"}
           </h1>
           <p className="text-xl font-semibold text-green-500 mb-6">
-            ${parseInt(selectedVariant.price)}
+          ₹{parseInt(selectedVariant.price)}
           </p>
           <div
             onClick={() => navigate(`/${product.shop_id}`)}

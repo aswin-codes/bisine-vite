@@ -31,7 +31,7 @@ const Cart = ({ cart, total,  }) => {
           <h2 className="text-xl font-semibold mb-4">Cart Summary</h2>
           <div className="flex justify-between items-center mb-4">
             <span className="text-gray-600">Total:</span>
-            <span className="text-lg font-semibold">${total}</span>
+            <span className="text-lg font-semibold">₹{total}</span>
           </div>
           <button onClick={() => handleBuyNow()} className="bg-blue-500 w-full text-white px-4 py-2 rounded-md hover:bg-blue-600">
             Proceed to Buy
