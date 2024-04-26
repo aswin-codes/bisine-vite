@@ -5,6 +5,7 @@ import axios from 'axios'
 import LoginButton from './LoginButton'
 import { Button, Input } from '@nextui-org/react'
 import { useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast'
 
 const clientId = "774961232823-b6fmrl6p9tcbhgk19fuv7a6ftbbegcm6.apps.googleusercontent.com"
 const LoginSide = () => {
@@ -33,11 +34,12 @@ const LoginSide = () => {
         }
       })
       .catch((error) => {
-        if (error.response && error.response.status === 404) {
+        if (error.response && error.response.status === 401) {
           // Handle 404 error (user not found)
-          console.log(error.response);
-          localStorage.setItem("shop",JSON.stringify({shopId:null}))
-          navigate("/user/register"); // Navigate to signup page or another page
+         localStorage.clear()
+         toast.error("Invalid credentials");
+         setIsLoading(false);
+           // Navigate to signup page or another page
         } else {
           // Handle other errors
           console.error("Error:", error);
