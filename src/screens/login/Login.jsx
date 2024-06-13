@@ -67,11 +67,11 @@ const LoginSide = () => {
         <div>
             <img src={Vector} className='object-contain h-64 lg:h-96'/>
         </div>
-        <div className='flex flex-col gap-3 w-72 mb-5'>
+        {/* <div className='flex flex-col gap-3 w-72 mb-5'>
           <Input value={username} onValueChange={(e) => setUsername(e)} label="username" color='primary' />
           <Input value={password} onValueChange={(e) => setPassword(e)} label="password" color='primary' type='password' />
           <Button onClick={handleLogin} color='primary' isLoading={isLoading} className='font-semibold'>Login</Button>
-        </div>
+        </div> */}
         <LoginButton/>
     </div>
   )
