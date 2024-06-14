@@ -8,9 +8,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'My Vite React PWA',
-        short_name: 'VitePWA',
-        description: 'My Vite-powered Progressive Web App',
+        name: 'Bisine',
+        short_name: 'Bisine',
+        description: 'DIY ecommerce platform',
         theme_color: '#ffffff',
         icons: [
           {
