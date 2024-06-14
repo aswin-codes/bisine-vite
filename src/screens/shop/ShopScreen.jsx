@@ -1,11 +1,5 @@
-import { Button } from "@/components/ui/button";
-import {
-  CardTitle,
-  CardDescription,
-  CardHeader,
-  CardContent,
-  Card,
-} from "@/components/ui/card";
+import { Button } from "@nextui-org/react";
+
 import { useDispatch, useSelector } from "react-redux";
 import {
   setArea,
