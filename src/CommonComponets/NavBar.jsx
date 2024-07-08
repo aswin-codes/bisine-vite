@@ -158,11 +158,11 @@ const NavBar = ({ isSearchVisible }) => {
                     <DropdownItem onClick={() => navigate("/user/orders")}>
                       My Orders
                     </DropdownItem>
-                    <DropdownItem
+                    {/* <DropdownItem
                       onClick={() => navigate("/terms-and-condition")}
                     >
                       Terms and Conditions
-                    </DropdownItem>
+                    </DropdownItem> */}
                     <DropdownItem
                       onClick={() => {
                         localStorage.clear();
@@ -177,7 +177,7 @@ const NavBar = ({ isSearchVisible }) => {
               </>
             ) : (
               <div className="flex gap-2"> 
-                <p className="cursor-pointer" onClick={() => navigate("/terms-and-condition")}>Terms And Conditions</p>
+                {/* <p className="cursor-pointer" onClick={() => navigate("/terms-and-condition")}>Terms And Conditions</p> */}
                 <button
                   onClick={() => navigateToLogin()}
                   className="bg-blue-700 text-white px-2  py-1 text-sm rounded-md"

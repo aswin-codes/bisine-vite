@@ -40,8 +40,8 @@ const ProductAdditionScreen = () => {
     const files = e.target.files;
     const updatedImages = [...tempImages];
     for (let i = 0; i < files.length; i++) {
-      console.log("Hi");
-      if (updatedImages.length >= 3) {
+      //console.log("Hi");
+      if (updatedImages.length >= 10) {
         break;
       }
       updatedImages.push({
@@ -273,7 +273,7 @@ const ProductAdditionScreen = () => {
                 <input
                   type="file"
                   multiple
-                  disabled={tempImages.length == 3}
+                  disabled={tempImages.length >= 10}
                   accept="image/*"
                   className="hidden"
                   id="image-upload"
@@ -282,7 +282,7 @@ const ProductAdditionScreen = () => {
                 <label
                   htmlFor="image-upload"
                   className={`cursor-pointer ${
-                    tempImages.length == 3 ? "bg-gray-500" : "bg-blue-500"
+                    tempImages.length >= 10 ? "bg-gray-500" : "bg-blue-500"
                   } text-white rounded-md px-4 py-2 `}
                 >
                   Upload Images
