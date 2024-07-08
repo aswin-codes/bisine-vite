@@ -38,6 +38,21 @@ const ProductList = () => {
     navigate("/admin/product/edit");
   };
 
+  const handleDeleteProduct = async (productId) => {
+    const confirmed = window.confirm("Are you sure you want to delete this product?");
+    if (confirmed) {
+      setIsLoading(true);
+      try {
+        await axiosInstance.delete(`/product/delete/${productId}`);
+        setProductList(productList.filter((product) => product.product_id !== productId));
+        setIsLoading(false);
+      } catch (error) {
+        console.error(error);
+        setIsLoading(false);
+      }
+    }
+  };
+
   useEffect(() => {
     fetchAllProducts();
   }, []);
@@ -79,7 +94,7 @@ const ProductList = () => {
           {productList &&
             productList.map((e) => {
               return (
-                <div className="p-4 my-2 bg-white rounded shadow flex flex-col md:flex-row">
+                <div key={e.product_id} className="p-4 my-2 bg-white rounded shadow flex flex-col md:flex-row">
                   <img
                     className="h-32 w-full md:w-32 object-cover rounded mb-4 md:mb-0 md:mr-4"
                     src={e.product_image_urls[0]}
@@ -93,21 +108,26 @@ const ProductList = () => {
                       {e.product_description.substring(0, 75)}
                     </p>
                     <div className="flex gap-2">
-                      {e.variants.map((e) => {
-                        return (
-                          <p className="py-1 px-2 bg-blue-400 rounded">
-                            {e.name} : {e.quantityInStock}
-                          </p>
-                        );
-                      })}
+                      {e.variants.map((variant, idx) => (
+                        <p key={idx} className="py-1 px-2 bg-blue-400 rounded">
+                          {variant.name} : {variant.quantityInStock}
+                        </p>
+                      ))}
                     </div>
                   </div>
                   <div className="flex items-center mt-4 md:mt-0">
                     <Button
                       onClick={() => handleEditInfo(e)}
-                      className="w-full"
+                      className="w-full mr-2"
                     >
                       Edit
+                    </Button>
+                    <Button
+                      color="danger"
+                      onClick={() => handleDeleteProduct(e.product_id)}
+                      className="w-full "
+                    >
+                      Delete
                     </Button>
                   </div>
                 </div>
